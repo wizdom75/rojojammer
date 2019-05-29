@@ -1,0 +1,241 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Average|Nunito');
+
+// Variables
+@import 'variables';
+$fa-font-path:"../webfonts";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+/*  Custom CSS attributes 
+    and styling
+*/
+
+.navbar-webstore {
+    background-color: #34495e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.footer-webstore {
+    background-color: #34495e;
+    color: #FFF;
+}
+
+.navbar a {
+    float: left;
+    color: white;
+    padding: 1px 6px;
+    text-decoration: none;
+  }  
+.brand {
+  color: #fff;
+  font-family: FANTASY;
+  font-size: 1.5rem;
+}
+
+.bg-menu {
+  background-color: $green;
+}
+.card-body  a {
+  text-decoration: none;
+}
+
+.prod-img {
+  max-height: 300px;
+}
+
+.search-btn-bg:hover {
+  background-color: #487eb0;
+  border: #487eb0;
+}
+
+.search-btn-bg {
+  background-color: #40739e;
+  border: #40739e;
+}
+.auth-style {
+  background-color: #34495e;
+}
+
+.auth-box {
+	position: relative;
+  background: #FFF;
+  color: #34495e;
+}
+.auth-box:after {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #FFF;
+	border-width: 20px;
+	margin-left: -20px;
+}
+.auth-box a {
+  color: #34495e;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #080d15;
+  opacity: .5;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+.mobile-search {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .mobile-search {
+    display: inline;
+    margin: 0 0 0 1px;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    width: 100%;
+    background: $body-bg;
+    z-index: 1000;
+  }
+
+  .header-container {
+    width: 100%;
+    padding: 0 1px;
+  }
+
+  .hero > h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero > a > button {
+    z-index: 9;
+  }
+} 
+
+/* Vertical megamenu */
+.menu-container {
+  width:100%;
+  padding: 20px 0;
+  display:block;
+  background: #FFF;
+  margin-bottom: 1px;
+}
+.menu-container:hover, .menu-container:focus, .menu-container:link, span{
+  background: $body-bg;
+}
+.menu {
+  width: 100%;
+  font-weight: 300;
+  line-height: 20px;
+  height: 100%;
+  position: relative;
+  padding: 0 0 0 4px;
+  margin: 0;
+  z-index: 1000;
+  background-color: #FFF;
+}
+.menu a, .menu a:link, .menu a:visited, .menu a:focus, span {
+  color: #333333;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: #1abc9c;
+  text-decoration: none;
+}
+.menu > li {
+  display: block;
+  text-align: left;
+  margin-left: -4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+.menu > li > a {
+  padding:15px 12px;
+  display: block;
+}
+.menu > li:hover > a {
+  //color: #227087;
+  color: #1abc9c;
+}
+.menu > li:hover > .menu-container{
+  background-color: $body-bg;
+}
+
+/* Megadrop width dropdown */
+.menu > li > .megadrop {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  list-style: none;
+  top: -12px;
+  left: 240px;
+  min-height: 53vh;
+  width: 300px;
+  text-align: left;
+  margin-top:20px;
+  padding: 0;
+  z-index: 10;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  overflow: hidden;
+  border-top: 1px solid #eceeee;
+  border-right: 1px solid #eceeee;
+  border-bottom: 1px solid #eceeee;
+  background-color: $body-bg;
+
+}
+.menu > li:hover .megadrop {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0px;
+}
+.menu ul li:hover:after {
+  color: #227087;
+}
+.menu .col {
+  width: 100%;
+  float: left;
+  margin: 0 0 0 2.2%;
+}
+.menu .col ul {
+  padding: 0;
+  margin: 0;
+}
+.menu .col ul li {
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+.menu .col h3 {
+  font-size: 0.9rem;
+  padding: 10px 0;
+  font-weight: bold;
+  margin: 5px 0 5px 0;
+  color: $green;
+}
+.menu .col ul li a {
+  display: block;
+  padding: 0 0 15px 0;
+  color: #333333;
+}
+.menu .col ul li a:hover {
+  color: #111;
+  text-decoration: underline;
+}
+
+.footer-address > p {
+  margin:0
+}
