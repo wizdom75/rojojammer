@@ -13,12 +13,12 @@
                 <!-- Content -->
                 <h5 class="brand"><i class="fas fa-globe text-success"></i> {{ config('app.name', 'RojoHammer') }}</h5>
                 <div class="footer-address muted">
-                @if(App\Setting::first())
+                {{-- @if(App\Setting::first())
                     {!! App\Setting::first()->address !!}
                     <p>{!! App\Setting::first()->postcode !!}</p>
                     <p><i class="fas fa-envelope"></i> &nbsp;{{ App\Setting::first()->email }}</p>
                     <p><i class="fas fa-phone"></i> &nbsp;{!! App\Setting::first()->phone !!}</p>
-                  @endif
+                  @endif --}}
                 </div>
               </div>
               <!-- Grid column -->
