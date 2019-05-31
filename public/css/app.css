@@ -16445,6 +16445,7 @@ readers do not read off random characters that represent icons */
   color: #fff;
   font-family: "Fjalla One", sans-serif;
   font-size: 1.5rem;
+  font-weight: 900;
 }
 
 .bg-menu {
