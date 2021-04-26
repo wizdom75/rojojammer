@@ -74,7 +74,7 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">{{ config('app.name', 'RojoHammer') }} © 2019
+    <div class="footer-copyright text-center py-3">{{ config('app.name', 'RojoHammer') }} © 2019 - <?=date('Y')?>
     </div>
     <!-- Copyright -->
 
