@@ -1,5 +1,9 @@
 <?php
+namespace App;
 
+use App\Category;
+
+class Helper {
     /**
      * Method that strips strings of non-alphanumeric 
      * characters and turn them into a slug
@@ -7,7 +11,7 @@
      * 
      * @return $slug
      */
-    function makeSlug($string)
+    public static function makeSlug($string)
     {
         return preg_replace('#\s+#','-',strtolower(preg_replace("/[^A-Za-z0-9 ]/", '', $string)));
     }
@@ -16,35 +20,28 @@
      * Get the categories bread crumb
      */
      
-    function makeBreadCrumb($id)
+    public static function makeBreadCrumb($id)
     {
-        $cat = App\Category::find($id);
-        if(Request()->slug === $cat->slug){
+        $cat = Category::find($id);
+        if(Request()->slug === @$cat->slug){
             $breadcrumb = "<li class='breadcrumb-item  active'  aria-current='page'>$cat->title</li>";
         }else{
-            $breadcrumb = "<li class='breadcrumb-item'><a  class='text-dark' href='/browse/$cat->slug'>$cat->title</a></li>";
+            $slug = @$cat->slug;
+            $title = @$cat->title;
+            $breadcrumb = "<li class='breadcrumb-item'><a  class='text-dark' href='/browse/$slug'>$title</a></li>";
         }
-        
-        if($cat->parent_id !== 0){
-           makeBreadCrumb($cat->parent_id);
+        $parent = @$cat->parent_id;
+        if($parent !== 0){
+           self::makeBreadCrumb($parent);
 
         }
         print($breadcrumb);
     }
 
     /**
-     * Get the 
-     */
-    function getMerchant($id)
-    {
-        $merchant = App\Merchant::find($id);
-        return $merchant->name;
-    }
-
-    /**
      * Get remote file for processing
      */
-    function getRemoteFile($source, $destination)
+    public static function getRemoteFile($source, $destination)
     {
         set_time_limit(0);
         $ch = curl_init();
@@ -57,3 +54,4 @@
         fputs($file, $data);
         fclose($file);
     }
+}

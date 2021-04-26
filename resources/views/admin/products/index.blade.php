@@ -30,7 +30,7 @@
                 @foreach ($products as $product)
                         <tr class="table-expand-row" data-open-details>
                             <td>{{ $product->id }}</td>
-                            <td>{{ \App\Category::find($product->category_id)->title }}</td>
+                            <td>{{ @\App\Category::find($product->category_id)->title }}</td>
                             <td>{{ $product->title }}</td>
                             <td>{{ $product->slug }}</td>
                             <td>{!! $product->specs !!}</td>

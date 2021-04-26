@@ -25,6 +25,7 @@ Route::post('/create-quote', 'QuoteController@store')->name('save_quote');
 Route::get('/page/{slug}', 'PagesController@show')->name('page');
 
 
+
 Route::get('/admin', 'Admin\DashboardController@index')->name('dashboard')->middleware('admin');
 Route::resource('/admin/products', 'Admin\ProductsController')->middleware('admin');
 Route::resource('/admin/categories', 'Admin\CategoriesController')->middleware('admin');

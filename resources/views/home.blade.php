@@ -1,18 +1,21 @@
 @extends('layouts.app')
-@section('title', 'Welcome to Rojo Hammer Plant and Tool Hire')
+@section('title', 'Plant & Tool Hire - RojoHammer ')
 @section('content')
 
-<div class="container-fluid col-lg-11 col-xl-10">
+<div class="container-fluid p-0">
     @include('inc.slider')
+</div>
+<div class="container">
+
 
     <h2 class="mt-3 text-muted">Featured Products</h2>
     <div id="featured" class="row  ">
-        
+
         <div v-for="product in featured" class=" col-6 col-sm-4 col-md-4 col-lg-3">
-                @include('inc.product-card')
+            @include('inc.product-card')
         </div>
     </div>
-            
+
 </div>
 <script type="text/javascript">
     new Vue({

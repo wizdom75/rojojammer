@@ -3,10 +3,10 @@
   <ol class="breadcrumb bg-light pl-0">
     @if(Request::is('browse/*'))
     <li class="breadcrumb-item"><a  class="text-dark" href="/"> <i class="fas fa-home text-success"></i></a></li>
-    {{ makeBreadCrumb($category->id)}}
+    {{ App\Helper::makeBreadCrumb($category->id)}}
     @elseif(Request::is('product/*'))
     <li class="breadcrumb-item"><a  class="text-dark" href="/"><i class="fas fa-home text-success"></i></a></li>
-    {{ makeBreadCrumb($product->category_id)}}
+    {{ App\Helper::makeBreadCrumb($product->category_id)}}
     <li class="breadcrumb-item active" aria-current="page">{!!$product->title!!}</li>
     @else
     <li class="breadcrumb-item"><a class="text-dark" href="/"><i class="fas fa-home text-success"></i></a></li>

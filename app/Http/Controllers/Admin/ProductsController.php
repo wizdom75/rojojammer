@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use App\Product;
 use App\Category;
 use App\Image;
@@ -55,7 +56,13 @@ class ProductsController extends Controller
             $imageName = time().'.'.request()->file->getClientOriginalExtension();
             request()->file->move(public_path('storage/img/products/'), $imageName);
             $path = 'storage/img/products/'.$imageName;
-    
+            
+            $oldImage = Image::where('product_id', $product->id)->get();
+            foreach($oldImage as $oldImageX){
+                $oldImageX->delete();
+            }
+            
+
             $image =  new Image;
             $image->product_id = $product->id;
             $image->path = $path;
@@ -101,14 +108,17 @@ class ProductsController extends Controller
         $product = Product::whereId($id)->update($vData);
         if($request->hasFile('file')){
 
+            $cur_image = Image::where('product_id', $id)->first();
+            @unlink($_SERVER['DOCUMENT_ROOT'] . '/'.$cur_image->path);
+
+
             $imageName = time().'.'.request()->file->getClientOriginalExtension();
             request()->file->move(public_path('storage/img/products/'), $imageName);
             $path = 'storage/img/products/'.$imageName;
     
-            $image =  new Image;
-            $image->product_id = $id;
+            $image =  Image::where('product_id', $id)->first();
             $image->path = $path;
-            $image->save();
+            $image->update();
 
 
         }
