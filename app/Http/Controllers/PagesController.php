@@ -17,6 +17,7 @@ class PagesController extends Controller
     public function show($slug)
     {
         $page = Page::where('slug', $slug)->first();
+        $page = Page::findOrFail($slug);
         return view('page')->with(compact('page'));
     }
 
