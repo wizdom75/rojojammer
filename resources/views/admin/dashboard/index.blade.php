@@ -68,7 +68,7 @@
                     </div>
                     <div class="card-divider">
                         <div class="row column">
-                            <a href="/admnin/quotes">Quotation Requets</a>
+                            <a href="/admin/quotes">Quotation Requets</a>
                         </div>
                     </div>
                 </div>
