@@ -45,8 +45,8 @@ class ProductsController extends Controller
             'category_id' => 'required',
             'title' => 'required',
             'slug' => 'required',
-            'specs' => 'max:12000',
-            'details' => 'max:12000'
+            'specs' => 'max:16300',
+            'details' => 'max:16300'
         ]);
 
         $product = Product::create($vData);
@@ -101,8 +101,8 @@ class ProductsController extends Controller
             'category_id' => 'required',
             'title' => 'required',
             'slug' => 'required',
-            'specs' => 'max:12000',
-            'details' => 'max:12000'
+            'specs' => 'max:16300',
+            'details' => 'max:16300'
         ]);
 
         $product = Product::whereId($id)->update($vData);
